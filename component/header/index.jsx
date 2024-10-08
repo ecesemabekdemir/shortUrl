@@ -1,6 +1,15 @@
+import { signOut } from "@/actions/auth";
 import Nav from "../nav";
 
-export default function Header() {
+import { createClient } from "@/utils/supabase/server";
+import Link from "next/link";
+
+export default async function Header() {
+  const supabase = createClient();
+  const {
+    data: { user },
+    error,
+  } = await supabase.auth.getUser();
   return (
     <>
       <div className="header">
@@ -8,10 +17,16 @@ export default function Header() {
           <img src="./img/Shortly.svg" alt="" />
           <Nav />
         </div>
-        <div className="login">
-          <button>Login</button>
-          <button>Sign Up</button>
-        </div>
+        {user ? (
+          <>
+            <span>Hello {user.email}</span>
+            <form action={signOut}>
+              <button>Sign Up</button>
+            </form>
+          </>
+        ) : (
+          <Link href="/login">Login</Link>
+        )}
       </div>
     </>
   );
