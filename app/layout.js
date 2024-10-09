@@ -1,6 +1,5 @@
 import localFont from "next/font/local";
 import "./globals.css";
-import Header from "@/component/header";
 import { Toaster } from "sonner";
 
 const geistSans = localFont({

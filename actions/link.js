@@ -25,5 +25,7 @@ export async function linkToShortAction(prevState, formData) {
 
   if (response.ok) {
     return { message: "Link başarıyla kısaltıldı" };
+  } else {
+    console.log("basarısız");
   }
 }
