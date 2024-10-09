@@ -57,6 +57,7 @@ h6 {
   align-items: center;
   gap: 493px;
   margin-bottom: 78px;
+  margin-top: 48px;
 }
 
 .logo {
@@ -123,6 +124,17 @@ button:focus {
 .login button:last-child:hover {
   background-color: #9ae3e3;
 }
+
+.loginBtn {
+  text-decoration: none;
+  background-color: white;
+  color: #9e9aa8;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 22.5px;
+  text-align: left;
+}
+
 .contentContainer {
   display: flex;
   align-items: center;
@@ -191,7 +203,6 @@ form {
   padding: 52px 64px;
   border-radius: 12px;
   margin-bottom: 120px;
-
 
   button {
     background-color: #2bd0d0;
@@ -299,5 +310,42 @@ form {
 
   button:first-child:hover {
     background-color: #1e7878;
+  }
+}
+
+.headerBtns {
+  display: flex;
+  align-items: center;
+  gap:14px;
+}
+
+.signupBtn {
+  padding: 9px 23px 8px 24px;
+  background-color: #9AE3E3;
+  color: #ffffff;
+  border-radius: 50px;
+  text-decoration: none;
+}
+
+.loginContainer {
+  margin: 0 auto;
+  width: 1110px;
+  
+
+  .loginHeader {
+    margin-top: 48px;
+  }
+}
+.loginPage {
+  max-width: 800px;
+  display: flex;
+  align-items: start;
+  img {
+    width: 500px;
+  }
+  form {
+    width: 400px;
+    display: flex;
+    flex-wrap: wrap;
   }
 }

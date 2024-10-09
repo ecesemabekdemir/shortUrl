@@ -2,8 +2,14 @@
 
 import { defaultHeader } from "@/utils/header";
 import { makeid } from "@/utils/link";
+import { createClient } from "@/utils/supabase/server";
 
 export async function linkToShortAction(prevState, formData) {
+  const supabase = createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
   const longUrl = formData.get("long_url");
   if (!longUrl) return { error: "Url alanı boş olamaz" };
   const regex =
@@ -11,6 +17,7 @@ export async function linkToShortAction(prevState, formData) {
 
   if (!regex.test(longUrl)) return { error: "Geçersiz bir url girdiniz" };
   const shortUrl = makeid(6);
+  console.log(shortUrl, longUrl);
   const response = await fetch(
     "https://sdtdtloxbyxpcjdnelqq.supabase.co/rest/v1/urls",
     {
@@ -19,6 +26,7 @@ export async function linkToShortAction(prevState, formData) {
       body: JSON.stringify({
         short_url: shortUrl,
         long_url: longUrl,
+        user_id: user?.id ? user.id : null,
       }),
     }
   );
@@ -26,6 +34,6 @@ export async function linkToShortAction(prevState, formData) {
   if (response.ok) {
     return { message: "Link başarıyla kısaltıldı" };
   } else {
-    console.log("basarısız");
+    console.log(response);
   }
 }

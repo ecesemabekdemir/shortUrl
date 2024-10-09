@@ -18,14 +18,21 @@ export default async function Header() {
           <Nav />
         </div>
         {user ? (
-          <>
+          <div className="login">
             <span>Hello {user.email}</span>
             <form action={signOut}>
-              <button>Sign Up</button>
+              <button>exit</button>
             </form>
-          </>
+          </div>
         ) : (
-          <Link href="/login">Login</Link>
+          <div className="headerBtns">
+            <Link className="loginBtn" href="/login">
+              Login
+            </Link>
+            <Link className="signupBtn" href="/signup">
+              SignUp
+            </Link>
+          </div>
         )}
       </div>
     </>

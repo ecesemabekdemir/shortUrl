@@ -28,14 +28,18 @@ export default function ShortUrlForm() {
     }
   };
   return (
-    <form ref={formRef} action={action}>
-      <input
-        type="text"
-        name="long_url"
-        placeholder="kısaltmak istediğin URL"
-      />
-      <button classname="buttons ">Shorten It!</button>
-      <button onClick={copyToClipboard}>Copied</button>
-    </form>
+    <div className="shorturlContainer">
+      <form ref={formRef} action={action}>
+        <input
+          type="text"
+          name="long_url"
+          placeholder="kısaltmak istediğin URL"
+        />
+        <div className="buttons">
+          <button>Shorten It!</button>
+          <button onClick={copyToClipboard}>Copied</button>
+        </div>
+      </form>
+    </div>
   );
 }
