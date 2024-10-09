@@ -34,7 +34,7 @@ export default function ShortUrlForm() {
         name="long_url"
         placeholder="kısaltmak istediğin URL"
       />
-      <button>Linki Kısalt</button>
+      <button classname="buttons ">Shorten It!</button>
       <button onClick={copyToClipboard}>Copied</button>
     </form>
   );
