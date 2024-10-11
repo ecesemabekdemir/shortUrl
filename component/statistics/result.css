@@ -1,0 +1,37 @@
+.resultContainer {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+}
+
+.result {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1110px;
+  padding: 18px 24px 18px 32px;
+  background-color: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  border-radius: 5px;
+
+  a {
+    color: #34313D;
+    text-decoration: none;
+  }
+}
+
+.copyBtn {
+  padding: 10px 31px 7px 31px;
+  color: #FFFFFF;
+  background-color: #9AE3E3;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+
+}
+
+.copyBtn:hover {
+background-color: #3A3054;
+}
