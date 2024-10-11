@@ -20,13 +20,6 @@ export default function ShortUrlForm() {
     }
   }, [state]);
 
-  const copyToClipboard = () => {
-    if (data?.short_url) {
-      navigator.clipboard.writeText(data.short_url).then(() => {
-        alert("Short url copied");
-      });
-    }
-  };
   return (
     <div className="shorturlContainer">
       <form ref={formRef} action={action}>
@@ -37,7 +30,6 @@ export default function ShortUrlForm() {
         />
         <div className="buttons">
           <button>Shorten It!</button>
-          <button onClick={copyToClipboard}>Copied</button>
         </div>
       </form>
     </div>
