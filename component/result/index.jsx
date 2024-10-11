@@ -18,7 +18,7 @@ export default async function Result() {
         {data?.map((x, i) => (
           <div key={i}>
             <Link href={x.long_url} target="blank">
-              http://localhost:3000{x.short_url}
+              http://short-url-taupe.vercel.app{x.short_url}
             </Link>
             <CopyToClipboard long_url={x.long_url} />
           </div>
