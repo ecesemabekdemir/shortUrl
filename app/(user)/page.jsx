@@ -1,4 +1,4 @@
-import Result from "@/component/result";
+import Result from "@/component/statistics";
 import ShortUrlForm from "./form";
 import Content from "@/component/content";
 

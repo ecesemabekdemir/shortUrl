@@ -22,11 +22,11 @@ export default function ShortUrlForm() {
 
   return (
     <div className="shorturlContainer">
-      <form ref={formRef} action={action}>
+      <form className="shorturlForm" ref={formRef} action={action}>
         <input
           type="text"
           name="long_url"
-          placeholder="kısaltmak istediğin URL"
+          placeholder="Shorten a link here..."
         />
         <div className="buttons">
           <button>Shorten It!</button>
